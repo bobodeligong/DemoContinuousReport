@@ -1,5 +1,5 @@
 // define the site that hosts stimuli images
-var repo_site = "http:// bobodeligong.github.io/DemoContinuousReport/";
+var repo_site = "http://bobodeligong.github.io/DemoContinuousReport/";
 
 // location of the images.
 var all_images = [repo_site + 'images/stim/1.svg',
