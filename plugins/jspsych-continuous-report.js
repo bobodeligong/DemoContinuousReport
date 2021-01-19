@@ -178,7 +178,7 @@ jsPsych.plugins["continuous_report"] = (function() {
     // % set the image position based on svg paper dimensions.
     // this may have to be changed depending on the size of the image. The demo images are 100 x 100.
     var imageX = centerXSVG - 100 / 2;
-    var imageY = centerYSVG - 100 / 2;
+    var imageY = centerYSVG / 2 - 100 / 2;
 
     // load in the images
     var g = paper.group();
