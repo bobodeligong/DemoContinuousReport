@@ -69,8 +69,8 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
 
 
     // get the current stimulus's file location
-    var currStim = 'images/stim/' + trial.stimulus + '.svg';
-    // var currStim2 = 'images/stim/' + trial.stimulus + '.svg';
+    var currStim1 = 'images/stim/' + trial.stimulus + '.svg';
+    var currStim2 = 'images/stim/' + trial.stimulus + '.svg';
 
     var svgWidth = 200;
     var svgHeight = 200;
@@ -95,50 +95,54 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
     // // % set the image position based on svg paper dimensions.
     // this may have to be changed depending on the size of the image. The demo images are 100 x 100.
 
-    var imageY = centerYSVG - 100;
+    var imageY1 = centerYSVG - 100;
 
     // // % set the image position based on svg paper dimensions.
     // this may have to be changed depending on the size of the image. The demo images are 100 x 100.
 
-    var imageXLeft = centerXSVG - 100;
+    var imageXLeft1 = centerXSVG - 100;
 
     // set the position of the second image
-    //var imageY2 = centerYSVG;
-    //var imageXLeft2 = centerXSVG;
+    var imageY2 = centerYSVG;
+    var imageXLeft2 = centerXSVG;
 
     // load in the images
     var g = paper.group();
 
 
-    Snap.load(currStim, function(fragment) {
-      var element = fragment.select('#Layer_1');
-      g.add(element);
-      element.attr({
+    Snap.load(currStim1, function(fragment) {
+      var element1 = fragment.select('#Layer_1');
+      g.add(element1);
+      element1.attr({
         width: "100",
         height: "100",
-        x: imageXLeft.toString(), //position of the image, as a string
-        y: imageY.toString(), //position of the image, as a string
+        x: imageXLeft1.toString(), //position of the image, as a string
+        y: imageY1.toString(), //position of the image, as a string
         //
       });
-/*
+
       Snap.load(currStim2, function(fragment) {
-        var element = fragment.select('#Layer_1');
-        g.add(element);
-        element.attr({
+        var element2 = fragment.select('#Layer_1');
+        g.add(element2);
+        element2.attr({
           width: "100",
           height: "100",
           x: imageXLeft2.toString(), //position of the image, as a string
           y: imageY2.toString(), //position of the image, as a string
           //
         });
-*/
+
       // select the image itself within the svg
-      var shape = element.select('path');
-      shape.attr({
+      var shape1 = element1.select('path');
+      shape1.attr({
         "fill": currHexColor
       });
 
-      
+      // select the image itself within the svg
+      var shape2 = element2.select('path');
+      shape2.attr({
+        "fill": currHexColor
+      });
 
 
     });
@@ -219,7 +223,8 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
       }, trial.trial_duration);
     }
 
-  };
+  }
 
   return plugin;
+
 })();
