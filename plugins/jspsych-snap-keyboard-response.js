@@ -69,7 +69,8 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
 
 
     // get the current stimulus's file location
-    var currStim = 'images/stim/' + trial.stimulus + '.svg';
+    var currStim1 = 'images/stim/' + trial.stimulus + '.svg';
+    var currStim2 = 'images/stim/' + trial.stimulus + '.svg';
 
     var svgWidth = 600;
     var svgHeight = 600;
@@ -102,8 +103,8 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
     var imageXLeft1 = centerXSVG - 100;
 
     // set the position of the second image
-    var imageY2 = centerYSVG + 100;
-    var imageXLeft2 = centerXSVG + 100;
+    var imageY2 = centerYSVG;
+    var imageXLeft2 = centerXSVG;
 
     // load in the images
     var g = paper.group();
@@ -136,6 +137,8 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
       shape.attr({
         "fill": currHexColor
       });
+
+      
 
 
     });
