@@ -94,27 +94,42 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
     // // % set the image position based on svg paper dimensions.
     // this may have to be changed depending on the size of the image. The demo images are 100 x 100.
 
-    var imageY = centerYSVG;
+    var imageY1 = centerYSVG - 100;
 
     // // % set the image position based on svg paper dimensions.
     // this may have to be changed depending on the size of the image. The demo images are 100 x 100.
 
-    var imageXLeft = centerXSVG;
+    var imageXLeft1 = centerXSVG - 100;
+
+    // set the position of the second image
+    var imageY2 = centerYSVG + 100;
+    var imageXLeft2 = centerXSVG + 100;
 
     // load in the images
     var g = paper.group();
 
 
-    Snap.load(currStim, function(fragment) {
+    Snap.load(currStim1, function(fragment) {
       var element = fragment.select('#Layer_1');
       g.add(element);
       element.attr({
         width: "100",
         height: "100",
-        x: imageXLeft.toString(), //position of the image, as a string
-        y: imageY.toString(), //position of the image, as a string
+        x: imageXLeft1.toString(), //position of the image, as a string
+        y: imageY1.toString(), //position of the image, as a string
         //
       });
+
+      Snap.load(currStim2, function(fragment) {
+        var element = fragment.select('#Layer_1');
+        g.add(element);
+        element.attr({
+          width: "100",
+          height: "100",
+          x: imageXLeft2.toString(), //position of the image, as a string
+          y: imageY2.toString(), //position of the image, as a string
+          //
+        });
 
       // select the image itself within the svg
       var shape = element.select('path');
