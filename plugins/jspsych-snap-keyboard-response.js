@@ -69,13 +69,13 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
 
 
     // get the current stimulus's file location
-    var currStim1 = 'images/stim/' + trial.stimulus + '.svg';
-    var currStim2 = 'images/stim/' + trial.stimulus + '.svg';
+    var currStim = 'images/stim/' + trial.stimulus + '.svg';
+    // var currStim2 = 'images/stim/' + trial.stimulus + '.svg';
 
-    var svgWidth = 600;
-    var svgHeight = 600;
+    var svgWidth = 200;
+    var svgHeight = 200;
 
-    // // create the svg object
+    // // create the svg object ? set for each picture?
     display_element.innerHTML = "<svg id='svg', width = '" + svgWidth.toString() + "', height = '" + svgWidth.toString() + "'/svg>" +
       '<div id="jspsych-html-keyboard-response-stimulus"></div>';
 
@@ -87,40 +87,40 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
     var currHexColor = Snap.rgb(rgbCol[0], rgbCol[1], rgbCol[2]);
 
 
-    // create the snap paper
+    // create the snap paper ? set for each pic?
     var paper = Snap("#svg");
-
+   
 
 
     // // % set the image position based on svg paper dimensions.
     // this may have to be changed depending on the size of the image. The demo images are 100 x 100.
 
-    var imageY1 = centerYSVG - 100;
+    var imageY = centerYSVG - 100;
 
     // // % set the image position based on svg paper dimensions.
     // this may have to be changed depending on the size of the image. The demo images are 100 x 100.
 
-    var imageXLeft1 = centerXSVG - 100;
+    var imageXLeft = centerXSVG - 100;
 
     // set the position of the second image
-    var imageY2 = centerYSVG;
-    var imageXLeft2 = centerXSVG;
+    //var imageY2 = centerYSVG;
+    //var imageXLeft2 = centerXSVG;
 
     // load in the images
     var g = paper.group();
 
 
-    Snap.load(currStim1, function(fragment) {
+    Snap.load(currStim, function(fragment) {
       var element = fragment.select('#Layer_1');
       g.add(element);
       element.attr({
         width: "100",
         height: "100",
-        x: imageXLeft1.toString(), //position of the image, as a string
-        y: imageY1.toString(), //position of the image, as a string
+        x: imageXLeft.toString(), //position of the image, as a string
+        y: imageY.toString(), //position of the image, as a string
         //
       });
-
+/*
       Snap.load(currStim2, function(fragment) {
         var element = fragment.select('#Layer_1');
         g.add(element);
@@ -131,7 +131,7 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
           y: imageY2.toString(), //position of the image, as a string
           //
         });
-
+*/
       // select the image itself within the svg
       var shape = element.select('path');
       shape.attr({
