@@ -100,6 +100,11 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
     // this may have to be changed depending on the size of the image. The demo images are 100 x 100.
 
     var imageXLeft = centerXSVG - 100 / 2;
+    
+    // create another rectangular
+    var colorSquareTwo = paper.rect(centerXSVG, centerYSVG, 50, 50).attr({
+      fill: "red"
+    })
 
     // load in the images
     var g = paper.group();
