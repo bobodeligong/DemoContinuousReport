@@ -102,7 +102,7 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
     var imageXLeft = centerXSVG - 100 / 2;
     
     // create another rectangular
-    var colorSquareTwo = paper.rect(centerXSVG, centerYSVG, 50, 50).attr({
+    var colorSquareTwo = paper.rect(centerXSVG, centerYSVG, 150, 150).attr({
       fill: "red"
     })
 
