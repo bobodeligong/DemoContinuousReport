@@ -14,9 +14,15 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
     name: 'snap-keyboard-response',
     description: 'Uses Snap.io to present images.',
     parameters: {
-      stimulus: {
+      stimulus1: {
         type: jsPsych.plugins.parameterType.HTML_STRING,
-        pretty_name: 'Stimulus',
+        pretty_name: 'Stimulus1',
+        default: undefined,
+        description: 'The HTML string to be displayed'
+      },
+      stimulus2: {
+        type: jsPsych.plugins.parameterType.HTML_STRING,
+        pretty_name: 'Stimulus2',
         default: undefined,
         description: 'The HTML string to be displayed'
       },
@@ -69,8 +75,8 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
 
 
     // get the current stimulus's file location
-    var currStim1 = 'images/stim/' + trial.stimulus + '.svg';
-    var currStim2 = 'images/stim/' + trial.stimulus + '.svg';
+    var currStim1 = 'images/stim/' + trial.stimulus1 + '.svg';
+    var currStim2 = 'images/stim/' + trial.stimulus2 + '.svg';
 
     var svgWidth = 200;
     var svgHeight = 200;
