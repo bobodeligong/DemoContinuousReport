@@ -121,8 +121,8 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
       element.attr({
         width: "100",
         height: "100",
-        x: currProbLocationX.toString(), //position of the image, as a string
-        y: currProbLocationY.toString(), //position of the image, as a string
+        x: currProbLocationX, //position of the image, as a string
+        y: currProbLocationY, //position of the image, as a string
         //
       });
 
