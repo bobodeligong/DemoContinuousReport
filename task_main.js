@@ -19,6 +19,7 @@ var color_study_order = {
   
     image: [1,2,3,4], // i.e. images/stim/1.svg, iamges/stim/2.svg, etc.
     colIndex: [87,171,327,291], // these refer to the index of the "correct" color within colors.js
+    locationsIndex: [1,2,3,4]
   };
 
 // study block stimuli
@@ -28,6 +29,7 @@ var studyStim = [];
 		studyStim[i] = {
       stimulus: color_study_order.image[i],
       colIndex: color_study_order.colIndex[i],
+      locationsIndex:color_study_order.locationsIndex[i],
     };
 	};
 
@@ -70,11 +72,13 @@ var studyBlock = {
       type: 'snap-keyboard-response',
       stimulus: jsPsych.timelineVariable('stimulus'),
       colIndex: jsPsych.timelineVariable('colIndex'),
+      locationsIndex:jsPsych.timelineVariable('locationsIndex'),
       trial_duration: 1000,
       choices: jsPsych.NO_KEYS,
       data: {
         stimulus: jsPsych.timelineVariable('stimulus'),
         colIndex: jsPsych.timelineVariable('colIndex'),
+        locationsIndex:jsPsych.timelineVariable('locationsIndex'),
       }
   };
 
