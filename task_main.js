@@ -12,6 +12,7 @@ var color_study_order = {
 
     image: [1,2,3,4], // i.e. images/stim/1.svg, iamges/stim/2.svg, etc.
     colIndex: [87,171,327,291], // these refer to the index of the "correct" color within colors.js
+    locationsIndex: [1,2,3,4]
   };
   
   // Probably would want to randomize the stimuli, but for the demo, setting the stimulus order and the "correct" colors:
@@ -19,7 +20,6 @@ var color_study_order = {
   
     image: [1,2,3,4], // i.e. images/stim/1.svg, iamges/stim/2.svg, etc.
     colIndex: [87,171,327,291], // these refer to the index of the "correct" color within colors.js
-    locationsIndex: [1,2,3,4]
   };
 
 // study block stimuli
