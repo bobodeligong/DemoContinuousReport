@@ -89,8 +89,9 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
     var svgHeight = 600;
 
     // // create the svg object
-    display_element.innerHTML = "<svg id='svg', width = '" + svgWidth.toString() + "', height = '" + svgWidth.toString() + "'/svg>" +
-      '<div id="jspsych-html-keyboard-response-stimulus"></div>';
+    //display_element.innerHTML = "<svg id='svg', width = '" + svgWidth.toString() + "', height = '" + svgWidth.toString() + "'/svg>" +
+      //'<div id="jspsych-html-keyboard-response-stimulus"></div>';
+    display_element.innerHTML = "<svg id='svg', width = '" + svgWidth.toString() + "', height = '" + svgWidth.toString() + "'/svg>" 
 
     // set the center points (relative to the SVG)
     var centerXSVG = svgWidth / 2;
