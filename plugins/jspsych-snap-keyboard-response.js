@@ -10,8 +10,6 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
 
   var plugin = {};
 
-  jsPsych.pluginAPI.registerPreload('snap-keyboard-response','stimulus','HTML_STRING');
-
   plugin.info = {
     name: 'snap-keyboard-response',
     description: 'Uses Snap.io to present images.',
@@ -21,18 +19,6 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
         pretty_name: 'Stimulus',
         default: undefined,
         description: 'The HTML string to be displayed'
-      },
-      colIndex:{
-        type: jsPsych.plugin.parameterType.INT,
-        pretty_name:'Color Index',
-        default: undefined,
-        description:'The color of the probed square.'
-      },
-      locationsIndex:{
-        type: jsPsych.plugin.parameterType.INT,
-        pretty_name: 'Location Index',
-        default: undefined,
-        description:'The location of the probed square.'
       },
       choices: {
         type: jsPsych.plugins.parameterType.KEYCODE,
@@ -89,22 +75,16 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
     var svgHeight = 600;
 
     // // create the svg object
-    //display_element.innerHTML = "<svg id='svg', width = '" + svgWidth.toString() + "', height = '" + svgWidth.toString() + "'/svg>" +
-      //'<div id="jspsych-html-keyboard-response-stimulus"></div>';
-    display_element.innerHTML = "<svg id='svg', width = '" + svgWidth.toString() + "', height = '" + svgWidth.toString() + "'/svg>" 
+    display_element.innerHTML = "<svg id='svg', width = '" + svgWidth.toString() + "', height = '" + svgWidth.toString() + "'/svg>" +
+      '<div id="jspsych-html-keyboard-response-stimulus"></div>';
 
     // set the center points (relative to the SVG)
     var centerXSVG = svgWidth / 2;
     var centerYSVG = svgHeight / 2;
 
-    // color of the object to be probed
     rgbCol = colors.colors[trial.colIndex];
     var currHexColor = Snap.rgb(rgbCol[0], rgbCol[1], rgbCol[2]);
 
-    // location of the object to be probed
-    probLocation = locations.locations[trial.locationsIndex];
-    var currProbLocationX = probLocation[0];
-    var currProbLocationY = probLocation[1]; 
 
     // create the snap paper
     var paper = Snap("#svg");
@@ -114,15 +94,15 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
     // // % set the image position based on svg paper dimensions.
     // this may have to be changed depending on the size of the image. The demo images are 100 x 100.
 
-    // var imageY = centerYSVG - 100 / 2;
+    var imageY = centerYSVG - 100 / 2;
 
     // // % set the image position based on svg paper dimensions.
     // this may have to be changed depending on the size of the image. The demo images are 100 x 100.
 
-    // var imageXLeft = centerXSVG - 100 / 2;
+    var imageXLeft = centerXSVG - 100 / 2;
 
     // create another rectangular
-    var colorSquareTwo = paper.rect(centerXSVG+100, centerYSVG, 100, 100).attr({
+    var colorSquareTwo = paper.rect(centerXSVG, centerYSVG, 150, 150).attr({
       fill: "red"
     })
 
@@ -136,8 +116,8 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
       element.attr({
         width: "100",
         height: "100",
-        x: currProbLocationX.toString(), //position of the image, as a string
-        y: currProbLocationY.toString(), //position of the image, as a string
+        x: imageXLeft.toString(), //position of the image, as a string
+        y: imageY.toString(), //position of the image, as a string
         //
       });
 
