@@ -175,7 +175,7 @@ jsPsych.plugins["continuous_report"] = (function() {
     })
 
     // create another rectangular
-    var colorSquareTwo = paper.rect(centerXSVG, centerYSVG, 50, 50).attr({
+    var colorSquareTwo = paper.rect(centerXSVG+150, centerYSVG, 100, 100).attr({
       fill: "red"
     })
 
