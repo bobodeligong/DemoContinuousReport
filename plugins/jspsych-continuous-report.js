@@ -110,7 +110,7 @@ jsPsych.plugins["continuous_report"] = (function() {
 
 
     // create the pointer. Here, it's set to appear at the top of the circle at the start of a trial.
-    var colPointer = paper.circle(300, 280, 15).attr({
+    var colPointer = paper.circle(300, 100, 15).attr({
       stroke: "black",
     });
 
@@ -166,7 +166,7 @@ jsPsych.plugins["continuous_report"] = (function() {
 
 
     // create the color wheel
-    var colorWheel = paper.circle(300, 300, 280).attr({
+    var colorWheel = paper.circle(300, 300, 200).attr({
       stroke: "black",
       fill: "none",
       "stroke-width": 10,
@@ -174,16 +174,22 @@ jsPsych.plugins["continuous_report"] = (function() {
       cy: 300,
     })
 
-    // create another rectangular
+    /* create another rectangular
     var colorSquareTwo = paper.rect(centerXSVG+50, centerYSVG-50, 100, 100).attr({
       fill: "red"
     })
+   */
 
+   var probLoc =[[centerXSVG-150, centerYSVG-50], [centerXSVG+50, centerYSVG-50]];
+
+   var probLocIndex = Math.round(Math.random());
 
     // % set the image position based on svg paper dimensions.
     // this may have to be changed depending on the size of the image. The demo images are 100 x 100.
-    var imageX = centerXSVG - 100 / 2-100;
-    var imageY = centerYSVG - 100 / 2;
+    // var imageX = centerXSVG - 100 / 2-100;
+    // var imageY = centerYSVG - 100 / 2;
+    var imageX = probLoc[probLocIndex][0];
+    var imageY = probLoc[probLocIndex][1];
 
     // load in the images
     var g = paper.group();
