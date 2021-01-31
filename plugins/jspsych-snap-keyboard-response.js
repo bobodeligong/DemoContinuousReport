@@ -82,9 +82,16 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
     var centerXSVG = svgWidth / 2;
     var centerYSVG = svgHeight / 2;
 
+    /*
     rgbCol = colors.colors[trial.colIndex];
     var currHexColor = Snap.rgb(rgbCol[0], rgbCol[1], rgbCol[2]);
+    */
 
+   rgbColLeft = colors.colors[trial.colIndex[0]];
+   var currHexColorLeft = Snap.rgb(rgbColLeft[0], rgbColLeft[1], rgbColLeft[2]);
+
+   rgbColRight = colors.colors[trial.colIndex[1]];
+   var currHexColorRight = Snap.rgb(rgbColRight[0], rgbColRight[1], rgbColRight[2]);
 
     // create the snap paper
     var paper = Snap("#svg");
@@ -94,16 +101,21 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
     // // % set the image position based on svg paper dimensions.
     // this may have to be changed depending on the size of the image. The demo images are 100 x 100.
 
-    var imageY = centerYSVG - 100 / 2;
+     var imageY = centerYSVG - 100 / 2;
 
     // // % set the image position based on svg paper dimensions.
     // this may have to be changed depending on the size of the image. The demo images are 100 x 100.
 
-    var imageXLeft = centerXSVG - 100 / 2-100;
+     var imageXLeft = centerXSVG - 100 / 2-100;
 
+    // create the left rectangular
+    /*var colorSquareLeft = paper.rect(centerXSVG-150, centerYSVG-50, 100, 100).attr({
+      fill: currHexColorLeft
+    })
+    */
     // create another rectangular
-    var colorSquareTwo = paper.rect(centerXSVG+50, centerYSVG-50, 100, 100).attr({
-      fill: "red"
+    var colorSquareRight = paper.rect(centerXSVG+50, centerYSVG-50, 100, 100).attr({
+      fill: currHexColorRight
     })
 
     // load in the images
@@ -124,7 +136,7 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
       // select the image itself within the svg
       var shape = element.select('path');
       shape.attr({
-        "fill": currHexColor
+        "fill": currHexColorLeft
       });
 
 
