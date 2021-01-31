@@ -101,24 +101,24 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
     // // % set the image position based on svg paper dimensions.
     // this may have to be changed depending on the size of the image. The demo images are 100 x 100.
 
-     var imageY = centerYSVG - 100 / 2;
+     //var imageY = centerYSVG - 100 / 2;
 
     // // % set the image position based on svg paper dimensions.
     // this may have to be changed depending on the size of the image. The demo images are 100 x 100.
 
-     var imageXLeft = centerXSVG - 100 / 2-100;
+     //var imageXLeft = centerXSVG - 100 / 2-100;
 
     // create the left rectangular
-    /*var colorSquareLeft = paper.rect(centerXSVG-150, centerYSVG-50, 100, 100).attr({
+    var colorSquareLeft = paper.rect(centerXSVG-150, centerYSVG-50, 100, 100).attr({
       fill: currHexColorLeft
     })
-    */
-    // create another rectangular
+    
+    // create the right rectangular
     var colorSquareRight = paper.rect(centerXSVG+50, centerYSVG-50, 100, 100).attr({
       fill: currHexColorRight
     })
 
-    // load in the images
+    /* load in the images
     var g = paper.group();
 
 
@@ -141,6 +141,7 @@ jsPsych.plugins["snap-keyboard-response"] = (function() {
 
 
     });
+    */
     var presentation_start = new Date()
 
 
