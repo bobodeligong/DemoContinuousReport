@@ -19,6 +19,7 @@ var color_study_order = {
   
     image: [1,2,3,4], // i.e. images/stim/1.svg, iamges/stim/2.svg, etc.
     colIndex: [87,171,327,291], // these refer to the index of the "correct" color within colors.js
+    probLocIndex: [0,1,0,1],
   };
 
 // study block stimuli
@@ -38,6 +39,7 @@ var testStim = [];
 		testStim[i] = {
       stimulus: color_test_order.image[i],
       colIndex: color_test_order.colIndex[i],
+      probLocIndex: color_test_order.probLocIndex[i],
     };
 	};
 
@@ -113,10 +115,12 @@ var testBlock = {
     type: 'continuous_report',
     stimulus: jsPsych.timelineVariable('stimulus'),
     colIndex: jsPsych.timelineVariable('colIndex'),
+    probLocIndex: jsPsych.timelineVariable('probLocIndex'),
     stim_duration: -1,
     data: {
       stimulus: jsPsych.timelineVariable('stimulus'),
       colIndex: jsPsych.timelineVariable('colIndex'),
+      probLocIndex: jsPsych.timelineVariable('probLocIndex'),
     }
 };
 
