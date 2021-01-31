@@ -110,7 +110,7 @@ jsPsych.plugins["continuous_report"] = (function() {
 
 
     // create the pointer. Here, it's set to appear at the top of the circle at the start of a trial.
-    var colPointer = paper.circle(300, 100, 15).attr({
+    var colPointer = paper.circle(300, 280, 15).attr({
       stroke: "black",
     });
 
@@ -166,7 +166,7 @@ jsPsych.plugins["continuous_report"] = (function() {
 
 
     // create the color wheel
-    var colorWheel = paper.circle(300, 300, 300).attr({
+    var colorWheel = paper.circle(300, 300, 280).attr({
       stroke: "black",
       fill: "none",
       "stroke-width": 10,
