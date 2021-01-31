@@ -11,15 +11,17 @@ repo_site + 'images/stim/4.svg'];
 var color_study_order = {
 
     image: [1,2,3,4], // i.e. images/stim/1.svg, iamges/stim/2.svg, etc.
-    colIndex: [87,171,327,291], // these refer to the index of the "correct" color within colors.js
+    //colIndex: [87,171,327,291],
+    colIndex: [[87,97], [171,181], [327,337], [291,301]], // these refer to the index of the "correct" color within colors.js, the first index means the left one, the second index means the right one
   };
   
   // Probably would want to randomize the stimuli, but for the demo, setting the stimulus order and the "correct" colors:
   var color_test_order = {
   
     image: [1,2,3,4], // i.e. images/stim/1.svg, iamges/stim/2.svg, etc.
-    colIndex: [87,171,327,291], // these refer to the index of the "correct" color within colors.js
-    probLocIndex: [0,0,0,0],
+    //colIndex: [87,171,327,291], // these refer to the index of the "correct" color within colors.js
+    colIndex: [[87,97], [171,181], [327,337], [291,301]], 
+    probLocIndex: [0,1,0,1],
   };
 
 // study block stimuli
