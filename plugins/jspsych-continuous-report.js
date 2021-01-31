@@ -166,7 +166,7 @@ jsPsych.plugins["continuous_report"] = (function() {
 
 
     // create the color wheel
-    var colorWheel = paper.circle(300, 300, 200).attr({
+    var colorWheel = paper.circle(300, 300, 300).attr({
       stroke: "black",
       fill: "none",
       "stroke-width": 10,
@@ -175,15 +175,15 @@ jsPsych.plugins["continuous_report"] = (function() {
     })
 
     // create another rectangular
-    var colorSquareTwo = paper.rect(centerXSVG+150, centerYSVG, 100, 100).attr({
+    var colorSquareTwo = paper.rect(centerXSVG+50, centerYSVG-50, 100, 100).attr({
       fill: "red"
     })
 
 
     // % set the image position based on svg paper dimensions.
     // this may have to be changed depending on the size of the image. The demo images are 100 x 100.
-    var imageX = centerXSVG - 100 / 2;
-    var imageY = centerYSVG / 2 - 100 / 2;
+    var imageX = centerXSVG - 100 / 2-100;
+    var imageY = centerYSVG - 100 / 2;
 
     // load in the images
     var g = paper.group();
@@ -195,7 +195,7 @@ jsPsych.plugins["continuous_report"] = (function() {
         width: "100",
         height: "100",
         x: imageX.toString(), //position of the image, as a string
-        y: imageX.toString(), //position of the image, as a string
+        y: imageY.toString(), //position of the image, as a string
         //
       });
 
