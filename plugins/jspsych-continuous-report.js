@@ -243,9 +243,9 @@ jsPsych.plugins["continuous_report"] = (function() {
         "yClicked": yClicked,
         "responseCol": colorResponse,
         "responseInd":trueIndex,
-        "responseError" : trueIndex - trial.colIndex,
-        "correctCol": originalColorWheel[trial.colIndex],
-        "correctColIndex": trial.colIndex,
+        "responseError" : trueIndex - trial.colIndex[trial.probLocIndex], 
+        "correctCol": originalColorWheel[trial.colIndex[trial.probLocIndex]], 
+        "correctColIndex": trial.colIndex[trial.probLocIndex], 
       };
 
       $(document).unbind("click.trialResponse")
