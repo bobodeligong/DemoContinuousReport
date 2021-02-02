@@ -1,3 +1,5 @@
+var trialNumber = 4;
+
 // define the site that hosts stimuli images
 var repo_site = "https://bobodeligong.github.io/DemoContinuousReport/";
 
@@ -7,12 +9,19 @@ repo_site + 'images/stim/2.svg',
 repo_site + 'images/stim/3.svg',
 repo_site + 'images/stim/4.svg'];
 
+// randomize color index pairs
+var colIndex=[];
+      for (j = 0; j<trialNumber; j++){
+      colIndex[j]=[Math.floor(Math.random()*360), Math.floor(Math.random()*360)]
+      };
+
 // Probably would want to randomize the stimuli, but for the demo, setting the stimulus order and the "correct" colors:
 var color_study_order = {
 
     image: [1,2,3,4], // i.e. images/stim/1.svg, iamges/stim/2.svg, etc.
     //colIndex: [87,171,327,291],
-    colIndex: [[87,97], [171,181], [327,337], [291,301]], // these refer to the index of the "correct" color within colors.js, the first index means the left one, the second index means the right one
+    // colIndex: [[87,97], [171,181], [327,337], [291,301]], // these refer to the index of the "correct" color within colors.js, the first index means the left one, the second index means the right one
+    colIndex: colIndex,
   };
   
   // Probably would want to randomize the stimuli, but for the demo, setting the stimulus order and the "correct" colors:
