@@ -16,7 +16,7 @@ var colIndex=[];
       };
 
 // Probably would want to randomize the stimuli, but for the demo, setting the stimulus order and the "correct" colors:
-var color_study_order = {
+/*var color_study_order = {
 
     image: [1,2,3,4], // i.e. images/stim/1.svg, iamges/stim/2.svg, etc.
     //colIndex: [87,171,327,291],
@@ -33,9 +33,16 @@ var color_study_order = {
     colIndex: color_study_order.colIndex,
     probLocIndex: [0,1,0,1],
   };
+  */
+
+  var stimuliOrder = {
+    image:[1,2,3,4],
+    colIndex: colIndex,
+    probLocIndex:[0,1,0,1],
+  }
 
 // study block stimuli
-var studyStim = [];
+/*var studyStim = [];
 	for (i = 0; i < color_study_order.image.length; i++) { //for each trial
 
 		studyStim[i] = {
@@ -53,7 +60,17 @@ var testStim = [];
       colIndex: color_test_order.colIndex[i],
       probLocIndex: color_test_order.probLocIndex[i],
     };
-	};
+  };
+*/
+
+var stimuliIndex =[];
+  for (i = 0; i < stimuliOrder.image.length; i++) {
+    stimuliIndex[i] = {
+      stimulus: stimuliOrder.image[i],
+      colIndex: stimuliOrder.colIndex[i],
+      probLocIndex: stimuliOrder.probLocIndex[i],
+    }
+  }
 
 /* create timeline */
 var timeline = [];
@@ -93,13 +110,13 @@ var studyBlock = {
       }
   };
 
-var study_procedure = {
+/*var study_procedure = {
     timeline: [fixationWhite, studyBlock],
     timeline_variables: studyStim
 
 }
 timeline.push(study_procedure);
-
+*/
 
 // Instructions for Recall Task
 
@@ -141,8 +158,8 @@ var testBlock = {
 
 
 var test_procedure = {
-	    timeline: [fixationWhite, testBlock],
-	    timeline_variables: testStim
+	    timeline: [fixationWhite, studyBlock, testBlock],
+	    timeline_variables: stimuliIndex,
 
 }
 timeline.push(test_procedure);
