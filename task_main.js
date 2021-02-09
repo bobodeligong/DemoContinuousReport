@@ -76,7 +76,7 @@ var stimuliIndex =[];
 var timeline = [];
 
 // Instructions for Study Task
-/*var instructions_study = {
+var instructions_study = {
 	type : 'instructions',
 	pages: ['DEMO STUDY TASK </br></br> Each image will appear one by one. Study the color of each image. You will be asked to recall the colors later.</br></br>' +
 'Ready? </br></br>'],
@@ -84,6 +84,19 @@ show_clickable_nav: true
 
 };
 timeline.push(instructions_study);
+
+
+/* var emotion_induction ={
+  type: 'image-keyboard-response',
+  stimulus: jsPsych.timelineVariable('emotion_stimulus'),
+  choices: ['1','2','3','4'],
+  prompt: "<p>Emotion rating from 1 to 4</p>",
+  trial_duration: 4000,
+  data: {
+    emotionIndex: jsPsych.timelineVariable('emotionIndex'),
+    mainExp_part:'emotionInduction'
+  }
+};
 */
 
 /* study trials */
@@ -143,6 +156,14 @@ var fixationWhite = {
 }
 */
 
+var delay ={
+  type: 'html-keyboard-response',
+	stimulus: '<div style="font-size:60px;">+</div>',
+	data: {mainExp_part: 'delay'},
+	choices: jsPsych.NO_KEYS,
+	trial_duration: 1000
+}
+
 var testBlock = {
     type: 'continuous_report',
     stimulus: jsPsych.timelineVariable('stimulus'),
@@ -158,7 +179,7 @@ var testBlock = {
 
 
 var test_procedure = {
-	    timeline: [fixationWhite, studyBlock, testBlock],
+	    timeline: [fixationWhite, studyBlock, delay, testBlock],
 	    timeline_variables: stimuliIndex,
 
 }
