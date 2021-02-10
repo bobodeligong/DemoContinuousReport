@@ -7,7 +7,12 @@ var repo_site = "https://bobodeligong.github.io/DemoContinuousReport/";
 var all_images = [repo_site + 'images/stim/1.svg',
 repo_site + 'images/stim/2.svg',
 repo_site + 'images/stim/3.svg',
-repo_site + 'images/stim/4.svg'];
+repo_site + 'images/stim/4.svg',
+repo_site + 'images/stim/emotion1.png',
+repo_site + 'images/stim/emotion2.png',
+repo_site + 'images/stim/emotion3.png',
+repo_site + 'images/stim/emotion4.png',
+];
 
 // randomize color index pairs
 var colIndex=[];
@@ -39,6 +44,7 @@ var colIndex=[];
     image:[1,2,3,4],
     colIndex: colIndex,
     probLocIndex:[0,1,0,1],
+    emotion:[5,6,7,8],
   }
 
 // study block stimuli
@@ -69,6 +75,7 @@ var stimuliIndex =[];
       stimulus: stimuliOrder.image[i],
       colIndex: stimuliOrder.colIndex[i],
       probLocIndex: stimuliOrder.probLocIndex[i],
+      emotion_stimulus: stimuliOrder.emotion[i],
     }
   }
 
@@ -86,18 +93,18 @@ show_clickable_nav: true
 timeline.push(instructions_study);
 
 
-/* var emotion_induction ={
+var emotion_induction ={
   type: 'image-keyboard-response',
   stimulus: jsPsych.timelineVariable('emotion_stimulus'),
   choices: ['1','2','3','4'],
   prompt: "<p>Emotion rating from 1 to 4</p>",
   trial_duration: 4000,
-  data: {
-    emotionIndex: jsPsych.timelineVariable('emotionIndex'),
-    mainExp_part:'emotionInduction'
+  //data: {
+    //emotionIndex: jsPsych.timelineVariable('emotionIndex'),
+    //mainExp_part:'emotionInduction'
   }
 };
-*/
+
 
 /* study trials */
 var fixationWhite = {
@@ -179,7 +186,7 @@ var testBlock = {
 
 
 var test_procedure = {
-	    timeline: [fixationWhite, studyBlock, delay, testBlock],
+	    timeline: [emotion_induction, fixationWhite, studyBlock, delay, testBlock],
 	    timeline_variables: stimuliIndex,
 
 }
