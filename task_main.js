@@ -44,7 +44,7 @@ var colIndex=[];
     image:[1,2,3,4],
     colIndex: colIndex,
     probLocIndex:[0,1,0,1],
-    emotion:[5,6,7,8],
+    //emotion:[5,6,7,8],
   }
 
 // study block stimuli
@@ -75,7 +75,7 @@ var stimuliIndex =[];
       stimulus: stimuliOrder.image[i],
       colIndex: stimuliOrder.colIndex[i],
       probLocIndex: stimuliOrder.probLocIndex[i],
-      emotion_stimulus: stimuliOrder.emotion[i],
+      //emotion_stimulus: stimuliOrder.emotion[i],
     }
   }
 
@@ -93,7 +93,7 @@ show_clickable_nav: true
 timeline.push(instructions_study);
 
 
-var emotion_induction ={
+/* var emotion_induction ={
   type: 'image-keyboard-response',
   stimulus: jsPsych.timelineVariable('emotion_stimulus'),
   choices: ['1','2','3','4'],
@@ -103,7 +103,7 @@ var emotion_induction ={
     //emotionIndex: jsPsych.timelineVariable('emotionIndex'),
     //mainExp_part:'emotionInduction'
   };
-
+*/
 
 /* study trials */
 var fixationWhite = {
@@ -185,7 +185,8 @@ var testBlock = {
 
 
 var test_procedure = {
-	    timeline: [emotion_induction, fixationWhite, studyBlock, delay, testBlock],
+	    //timeline: [emotion_induction, fixationWhite, studyBlock, delay, testBlock],
+	    timeline: [fixationWhite, studyBlock, delay, testBlock],
 	    timeline_variables: stimuliIndex,
 
 }
