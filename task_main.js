@@ -75,7 +75,7 @@ var stimuliIndex =[];
       stimulus: stimuliOrder.image[i],
       colIndex: stimuliOrder.colIndex[i],
       probLocIndex: stimuliOrder.probLocIndex[i],
-      emotion_stimulus: stimuliOrder.emotion[i],
+      emotion_stimulus: all_images[stimuliOrder.emotion[i]],
     }
   }
 
