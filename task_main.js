@@ -44,7 +44,7 @@ var colIndex=[];
     image:[1,2,3,4],
     colIndex: colIndex,
     probLocIndex:[0,1,0,1],
-    emotion:[1,2,3,4],
+    emotion:[5,6,7,8],
   }
 
 // study block stimuli
@@ -101,7 +101,7 @@ var emotion_induction ={
   trial_duration: 4000,
   //data: {
     //emotionIndex: jsPsych.timelineVariable('emotionIndex'),
-    //mainExp_part:'emotionInduction'
+    //mainExp_part:'emotionInduction'},
   };
 
 
@@ -186,7 +186,6 @@ var testBlock = {
 
 var test_procedure = {
 	    timeline: [emotion_induction, fixationWhite, studyBlock, delay, testBlock],
-	    //timeline: [fixationWhite, studyBlock, delay, testBlock],
 	    timeline_variables: stimuliIndex,
 
 }
