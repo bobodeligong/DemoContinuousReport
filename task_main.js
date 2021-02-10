@@ -72,7 +72,7 @@ var testStim = [];
 var stimuliIndex =[];
 
 //  for (i = 0; i < stimuliOrder.image.length; i++) {
-    for (i = 0; i < strialNumber; i++) {    
+    for (i = 0; i < trialNumber; i++) {    
     stimuliIndex[i] = {
       stimulus: stimuliOrder.image[i],
       colIndex: stimuliOrder.colIndex[i],
