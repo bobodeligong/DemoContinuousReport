@@ -105,10 +105,10 @@ var emotion_induction ={
     //emotionIndex: jsPsych.timelineVariable('emotionIndex'),
     //mainExp_part:'emotionInduction'},
   };
-
+  
 
 /* study trials */
-var fixationWhite = {
+/*var fixationWhite = {
 	type: 'html-keyboard-response',
 	stimulus: '<div style="font-size:60px;">+</div>',
 	data: {test_part: 'fixation'},
@@ -163,7 +163,7 @@ var fixationWhite = {
 
 }
 */
-
+/*
 var delay ={
   type: 'html-keyboard-response',
 	stimulus: '<div style="font-size:60px;">+</div>',
@@ -185,9 +185,11 @@ var testBlock = {
     }
 };
 
+*/
 
 var test_procedure = {
-	    timeline: [emotion_induction, fixationWhite, studyBlock, delay, testBlock],
+      //timeline: [emotion_induction, fixationWhite, studyBlock, delay, testBlock],
+      timeline:[emotion_induction],
 	    timeline_variables: stimuliIndex,
       repetitions: 1
 }
