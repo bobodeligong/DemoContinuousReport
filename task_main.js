@@ -7,12 +7,7 @@ var repo_site = "https://bobodeligong.github.io/DemoContinuousReport/";
 var all_images = [repo_site + 'images/stim/1.svg',
 repo_site + 'images/stim/2.svg',
 repo_site + 'images/stim/3.svg',
-repo_site + 'images/stim/4.svg',
-repo_site + 'images/stim/emotion1.png',
-repo_site + 'images/stim/emotion2.png',
-repo_site + 'images/stim/emotion3.png',
-repo_site + 'images/stim/emotion4.png',
-];
+repo_site + 'images/stim/4.svg'];
 
 // randomize color index pairs
 var colIndex=[];
@@ -44,7 +39,6 @@ var colIndex=[];
     image:[1,2,3,4],
     colIndex: colIndex,
     probLocIndex:[0,1,0,1],
-    emotion:[4,5,6,7],
   }
 
 // study block stimuli
@@ -70,14 +64,11 @@ var testStim = [];
 */
 
 var stimuliIndex =[];
-
-//  for (i = 0; i < stimuliOrder.image.length; i++) {
-    for (i = 0; i < trialNumber; i++) {    
+  for (i = 0; i < stimuliOrder.image.length; i++) {
     stimuliIndex[i] = {
       stimulus: stimuliOrder.image[i],
       colIndex: stimuliOrder.colIndex[i],
       probLocIndex: stimuliOrder.probLocIndex[i],
-      emotion_stimulus: all_images[stimuliOrder.emotion[i]],
     }
   }
 
@@ -85,7 +76,7 @@ var stimuliIndex =[];
 var timeline = [];
 
 // Instructions for Study Task
-/*var instructions_study = {
+var instructions_study = {
 	type : 'instructions',
 	pages: ['DEMO STUDY TASK </br></br> Each image will appear one by one. Study the color of each image. You will be asked to recall the colors later.</br></br>' +
 'Ready? </br></br>'],
@@ -93,22 +84,23 @@ show_clickable_nav: true
 
 };
 timeline.push(instructions_study);
-*/
 
-var emotion_induction ={
+
+/* var emotion_induction ={
   type: 'image-keyboard-response',
   stimulus: jsPsych.timelineVariable('emotion_stimulus'),
   choices: ['1','2','3','4'],
   prompt: "<p>Emotion rating from 1 to 4</p>",
   trial_duration: 4000,
-  //data: {
-    //emotionIndex: jsPsych.timelineVariable('emotionIndex'),
-    //mainExp_part:'emotionInduction'},
-  };
-  
+  data: {
+    emotionIndex: jsPsych.timelineVariable('emotionIndex'),
+    mainExp_part:'emotionInduction'
+  }
+};
+*/
 
 /* study trials */
-/*var fixationWhite = {
+var fixationWhite = {
 	type: 'html-keyboard-response',
 	stimulus: '<div style="font-size:60px;">+</div>',
 	data: {test_part: 'fixation'},
@@ -163,7 +155,7 @@ var fixationWhite = {
 
 }
 */
-/*
+
 var delay ={
   type: 'html-keyboard-response',
 	stimulus: '<div style="font-size:60px;">+</div>',
@@ -185,13 +177,11 @@ var testBlock = {
     }
 };
 
-*/
 
 var test_procedure = {
-      //timeline: [emotion_induction, fixationWhite, studyBlock, delay, testBlock],
-      timeline:[emotion_induction],
+	    timeline: [fixationWhite, studyBlock, delay, testBlock],
 	    timeline_variables: stimuliIndex,
-      repetitions: 1
+
 }
 timeline.push(test_procedure);
   /* var timeline = [instructions_study, study_procedure, instructions_test, test_procedure]; */
