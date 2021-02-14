@@ -44,7 +44,7 @@ var colIndex=[];
     image:[1,2,3,4],
     colIndex: colIndex,
     probLocIndex:[0,1,0,1],
-    emotion:[5,6,7,8],
+    emotion:[1,2,3,4],
   }
 
 // study block stimuli
@@ -85,7 +85,7 @@ var stimuliIndex =[];
 var timeline = [];
 
 // Instructions for Study Task
-var instructions_study = {
+/*var instructions_study = {
 	type : 'instructions',
 	pages: ['DEMO STUDY TASK </br></br> Each image will appear one by one. Study the color of each image. You will be asked to recall the colors later.</br></br>' +
 'Ready? </br></br>'],
@@ -93,7 +93,7 @@ show_clickable_nav: true
 
 };
 timeline.push(instructions_study);
-
+*/
 
 var emotion_induction ={
   type: 'image-keyboard-response',
