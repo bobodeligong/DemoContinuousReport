@@ -44,7 +44,7 @@ var colIndex=[];
     image:[1,2,3,4],
     colIndex: colIndex,
     probLocIndex:[0,1,0,1],
-    emotion:[1,2,3,4],
+    emotion:[4,5,6,7],
   }
 
 // study block stimuli
