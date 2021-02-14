@@ -189,7 +189,7 @@ var testBlock = {
 var test_procedure = {
 	    timeline: [emotion_induction, fixationWhite, studyBlock, delay, testBlock],
 	    timeline_variables: stimuliIndex,
-
+      repetitions: 1
 }
 timeline.push(test_procedure);
   /* var timeline = [instructions_study, study_procedure, instructions_test, test_procedure]; */
