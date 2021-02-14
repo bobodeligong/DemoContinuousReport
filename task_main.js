@@ -97,7 +97,7 @@ var emotion_induction ={
   //data: {
     //emotionIndex: jsPsych.timelineVariable('emotionIndex'),
     //mainExp_part:'emotionInduction'
-  }
+  //}
 };
 
 
