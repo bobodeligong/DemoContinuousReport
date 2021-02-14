@@ -72,7 +72,8 @@ jsPsych.plugins["continuous_report"] = (function() {
     var stimParameters = {};
 
     // get the image file location
-    var currStim = 'images/stim/' + trial.stimulus + '.svg';
+    //var currStim = 'images/stim/' + trial.stimulus + '.svg';
+    var currStim = 'images/stim/1.svg';
 
 
 
