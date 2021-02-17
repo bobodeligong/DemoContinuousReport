@@ -87,7 +87,7 @@ show_clickable_nav: true
 timeline.push(instructions_study);
 
 
-var emotion_induction ={
+/* var emotion_induction ={
   type: 'image-keyboard-response',
   // stimulus: jsPsych.timelineVariable('emotion_stimulus'),
   stimulus: repo_site +'images/stim/emotion1.png',
@@ -100,6 +100,7 @@ var emotion_induction ={
   //}
 };
 timeline.push(emotion_induction);
+*/
 
 /* study trials */
 var fixationWhite = {
