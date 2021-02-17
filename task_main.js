@@ -93,7 +93,7 @@ var emotion_induction ={
   stimulus: repo_site +'images/stim/emotion1.png',
   choices: ['1','2','3','4'],
   prompt: "<p>Emotion rating from 1 to 4</p>",
-  trial_duration: 4000,
+  //trial_duration: 4000,
   //data: {
     //emotionIndex: jsPsych.timelineVariable('emotionIndex'),
     //mainExp_part:'emotionInduction'
