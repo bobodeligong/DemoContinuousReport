@@ -90,7 +90,7 @@ timeline.push(instructions_study);
 var emotion_induction ={
   type: 'image-keyboard-response',
   // stimulus: jsPsych.timelineVariable('emotion_stimulus'),
-  stimulus: 'images/stim/emotion1.png',
+  stimulus: repo_site + 'images/stim/emotion1.png',
   choices: ['1','2','3','4'],
   prompt: "<p>Emotion rating from 1 to 4</p>",
   trial_duration: 4000,
