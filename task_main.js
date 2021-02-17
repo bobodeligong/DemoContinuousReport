@@ -99,7 +99,7 @@ var emotion_induction ={
     //mainExp_part:'emotionInduction'
   //}
 };
-
+timeline.push(emotion_induction);
 
 /* study trials */
 var fixationWhite = {
@@ -181,8 +181,8 @@ var testBlock = {
 
 
 var test_procedure = {
-      // timeline: [fixationWhite, studyBlock, delay, testBlock],
-      timeline: [emotion_induction, fixationWhite, studyBlock, delay, testBlock],
+      timeline: [fixationWhite, studyBlock, delay, testBlock],
+      //timeline: [emotion_induction, fixationWhite, studyBlock, delay, testBlock],
 	    timeline_variables: stimuliIndex,
 
 }
