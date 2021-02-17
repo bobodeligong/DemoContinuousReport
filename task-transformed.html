@@ -39,8 +39,8 @@
 
 	jsPsych.init({
 		timeline: timeline,
-		/*preload_images: all_images, // this speeds things up.
-	  show_preload_progress_bar: false, */
+		preload_images: all_images, // this speeds things up.
+	  show_preload_progress_bar: false, 
 		on_finish: function() {
        jsPsych.data.displayData(); // if you want to display the data at the end for debugging purposes.
     }
