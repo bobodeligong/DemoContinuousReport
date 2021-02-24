@@ -181,7 +181,7 @@ var testBlock = {
 };
 
 var doubleTestBlock = {
-  type: 'continuous_report',
+  type: 'continuous_report_double',
   stimulus: jsPsych.timelineVariable('stimulus'),
   colIndex: jsPsych.timelineVariable('colIndex'),
   probLocIndex: jsPsych.timelineVariable('probLocIndex'),
