@@ -180,9 +180,21 @@ var testBlock = {
     }
 };
 
+var doubleTestBlock = {
+  type: 'continuous_report',
+  stimulus: jsPsych.timelineVariable('stimulus'),
+  colIndex: jsPsych.timelineVariable('colIndex'),
+  probLocIndex: jsPsych.timelineVariable('probLocIndex'),
+  stim_duration: -1,
+  data: {
+    stimulus: jsPsych.timelineVariable('stimulus'),
+    colIndex: jsPsych.timelineVariable('colIndex'),
+    probLocIndex: jsPsych.timelineVariable('probLocIndex'),
+  }
+};
 
 var test_procedure = {
-      timeline: [fixationWhite, studyBlock, delay, testBlock],
+      timeline: [fixationWhite, studyBlock, delay, testBlock, doubleTestBlock],
       //timeline: [emotion_induction, fixationWhite, studyBlock, delay, testBlock],
 	    timeline_variables: stimuliIndex,
 
