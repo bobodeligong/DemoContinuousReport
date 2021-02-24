@@ -190,8 +190,8 @@ jsPsych.plugins["continuous_report_double"] = (function() {
     // this may have to be changed depending on the size of the image. The demo images are 100 x 100.
     // var imageX = centerXSVG - 100 / 2-100;
     // var imageY = centerYSVG - 100 / 2;
-    var imageX = probLoc[trial.probLocIndex][0];
-    var imageY = probLoc[trial.probLocIndex][1];
+    var imageX = probLoc[1-trial.probLocIndex][0];
+    var imageY = probLoc[1-trial.probLocIndex][1];
 
     // load in the images
     var g = paper.group();
@@ -244,9 +244,9 @@ jsPsych.plugins["continuous_report_double"] = (function() {
         "yClicked": yClicked,
         "responseCol": colorResponse,
         "responseInd":trueIndex,
-        "responseError" : trueIndex - trial.colIndex[trial.probLocIndex], 
-        "correctCol": originalColorWheel[trial.colIndex[trial.probLocIndex]], 
-        "correctColIndex": trial.colIndex[trial.probLocIndex], 
+        "responseError" : trueIndex - trial.colIndex[1-trial.probLocIndex], 
+        "correctCol": originalColorWheel[trial.colIndex[1-trial.probLocIndex]], 
+        "correctColIndex": trial.colIndex[1-trial.probLocIndex], 
       };
 
       $(document).unbind("click.trialResponse")
